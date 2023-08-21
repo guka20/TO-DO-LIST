@@ -1,0 +1,66 @@
+{
+	"info": {
+		"_postman_id": "734af245-2170-4af4-ab1c-77f7cf5892a4",
+		"name": "ToDoList",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "26431976"
+	},
+	"item": [
+		{
+			"name": "Get All Todo",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "localhost:8000/api"
+			},
+			"response": []
+		},
+		{
+			"name": "Add New Todo",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "name",
+							"value": "Guksika",
+							"type": "text"
+						}
+					]
+				},
+				"url": "localhost:8000/api"
+			},
+			"response": []
+		},
+		{
+			"name": "Update Todo",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "name",
+							"value": "Guramiko124",
+							"type": "text"
+						}
+					]
+				},
+				"url": "localhost:8000/api/24"
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Todo",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": "localhost:8000/api/2"
+			},
+			"response": []
+		}
+	]
+}
