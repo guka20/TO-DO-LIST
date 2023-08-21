@@ -10,7 +10,11 @@ const Controllers = {
     const query = "INSERT INTO todo (Name) VALUES (?)"
     connect.query(query,[req.body.name],(err,result)=>{
         if(err)throw err
-        res.json({message:"Added Successfully"});
+        const newTodo = {
+          ID: result.insertId,
+          Name: req.body.name
+        };
+        res.json({message:"Added Successfully",todo:newTodo});
     })
   },
   updateTodo: (req, res) => {
@@ -19,10 +23,14 @@ const Controllers = {
     const { id } = req.params;
     connect.query(query,[name,id],(err,result)=>{ 
         if(err) throw err
+        const newTodo = {
+          ID: result.insertId,
+          Name: req.body.name
+        };
         if(result.affectedRows===0){
             return res.status(400).json({message:"There is no data on this id"})
         }
-        res.json({message:"Updated Successfully"})
+        res.json({message:"Updated Successfully",todo:newTodo})
     })
   },
   deleteTodo: (req, res) => {
@@ -33,7 +41,11 @@ const Controllers = {
         if(result.affectedRows===0){
             return res.status(400).json({message:"There is no data on this id"})
         }
-        res.json({message:"Deleted successfully"})
+        const newTodo = {
+          ID: result.insertId,
+          Name: req.body.name
+        };
+        res.json({message:"Deleted Successfully",todo:newTodo})
     })
   },
 };
